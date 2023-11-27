@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Redirect</title>
+</head>
+<body>
+    <h1>OAuth Redirect Page</h1>
+    <p>If you see this page, authentication might have succeeded. Check your app for further details.</p>
+    <script>
+        // Parse the URL parameters to get the code
+        const queryParams = new URLSearchParams(window.location.search);
+        const code = queryParams.get('code');
+        
+        // Display the code on the page for now (for testing purposes)
+        // In a production app, you would send this to your server to exchange for an access token
+        if (code) {
+            document.body.append(`Authorization code: ${code}`);
+            // You can redirect the user or close the window
+        }
+    </script>
+</body>
+</html>
